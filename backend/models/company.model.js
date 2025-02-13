@@ -48,6 +48,9 @@ const companySchema = new mongoose.Schema(
       location: {
         type: String,
       },
+      industry:{
+        type:String,
+      },
       logo: {
         type: String, // URL to company logo
       },

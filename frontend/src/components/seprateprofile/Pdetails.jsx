@@ -5,6 +5,7 @@ import { AreaChart, BedDouble, Biohazard, BiohazardIcon, BuildingIcon, Contact, 
 import { useSelector } from 'react-redux'
 import useGetAppliedJobs from '@/hooks/useGetAppliedJobs'
 import Personaldetails from '../jobseekerupdates/Personaldetails';
+import formatDate from '../jobseekerupdates/Date'
 
 const Pdetails = () => {
     useGetAppliedJobs();
@@ -38,8 +39,8 @@ const Pdetails = () => {
         
         <div className="flex items-center gap-3 my-2">
             Date of birth
-            <span>{user?.personaldetails?.dateofbirth}</span>
-            
+            {/* <span>{user?.personaldetails?.dateofbirth}</span> */}
+            <span>{formatDate(user?.personaldetails?.dateofbirth)}</span>
         </div>
      
      

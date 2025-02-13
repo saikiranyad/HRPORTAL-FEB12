@@ -86,6 +86,9 @@ const Personaldetails = ({ open, setOpen }) => {
                                     value={input.fathername}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter the Father/Guardian Name")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             {
@@ -99,6 +102,9 @@ const Personaldetails = ({ open, setOpen }) => {
                                             value={input.aaddharnum}
                                             onChange={changeEventHandler}
                                             className="col-span-3"
+                                            required
+                                            onInvalid={(e) => e.target.setCustomValidity("Enter the aadharcard")}
+                                            onInput={(e) => e.target.setCustomValidity("")}
                                         />
                                     </div>
                                 ) : (null)
@@ -114,6 +120,10 @@ const Personaldetails = ({ open, setOpen }) => {
                                         value={input.dateofbirth}
                                         onChange={changeEventHandler}
                                         className="col-span-3"
+
+                                        required
+                                        onInvalid={(e) => e.target.setCustomValidity("Enter the Date of birth")}
+                                        onInput={(e) => e.target.setCustomValidity("")}
 
                                     />
                                 </div>

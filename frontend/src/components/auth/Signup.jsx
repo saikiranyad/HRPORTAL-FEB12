@@ -292,7 +292,7 @@ const Signup = () => {
                             value={input.fullname}
                             name="fullname"
                             onChange={changeEventHandler}
-                            placeholder="patel"
+                            placeholder="Enter your name"
                         />
                     </div>
                     <div className='my-2'>
@@ -302,7 +302,7 @@ const Signup = () => {
                             value={input.email}
                             name="email"
                             onChange={changeEventHandler}
-                            placeholder="patel@gmail.com"
+                            placeholder="enter your email"
                         />
                     </div>
                     <div className='my-2'>
@@ -312,7 +312,7 @@ const Signup = () => {
                             value={input.phoneNumber}
                             name="phoneNumber"
                             onChange={changeEventHandler}
-                            placeholder="8080808080"
+                            placeholder="enter  your phone number"
                         />
                     </div>
                     <div className='my-2'>

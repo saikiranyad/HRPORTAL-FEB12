@@ -97,6 +97,9 @@ const Workhistory = ({ open, setOpen }) => {
                                     value={input.technologyworked}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter your Technology")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             <div className='grid grid-cols-4 items-center gap-4'>
@@ -108,6 +111,9 @@ const Workhistory = ({ open, setOpen }) => {
                                     value={input.companydetails}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter your company details")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             <div className='grid grid-cols-4 items-center gap-4'>
@@ -119,6 +125,9 @@ const Workhistory = ({ open, setOpen }) => {
                                     value={input.companyaddress}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter your company address")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             <div className='grid grid-cols-4 items-center gap-4'>
@@ -130,6 +139,9 @@ const Workhistory = ({ open, setOpen }) => {
                                     value={input.zone}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter your Zone")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
 

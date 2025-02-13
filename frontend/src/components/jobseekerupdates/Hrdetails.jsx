@@ -93,6 +93,9 @@ const Hrdetails = ({ open, setOpen }) => {
                                 name="directjob"
                                 value={input?.directjob}
                                 onChange={changeEventHandler}
+                                required
+                                onInvalid={(e) => e.target.setCustomValidity("Enter  Directjob")}
+                                onInput={(e) => e.target.setCustomValidity("")}
                             >
                                 <option>Choose...</option>
                                 <option value="Yes">Yes</option>
@@ -106,6 +109,9 @@ const Hrdetails = ({ open, setOpen }) => {
                                 name="trainingrequired"
                                 value={input?.trainingrequired}
                                 onChange={changeEventHandler}
+                                required
+                                onInvalid={(e) => e.target.setCustomValidity("Enter Training required")}
+                                onInput={(e) => e.target.setCustomValidity("")}
                             >
                                 <option>Choose...</option>
                                 <option value="Yes">Yes</option>
@@ -114,13 +120,16 @@ const Hrdetails = ({ open, setOpen }) => {
                             </div>
 
                             <div className='grid grid-cols-4 items-center gap-4'>
-                                <Label htmlFor="expectedsalary" className="text-right">ExpectedSalary</Label>
+                                <Label htmlFor="expectedsalary" className="text-right">Expected Salary</Label>
                                 <Input
                                     id="expectedsalary"
                                     name="expectedsalary"
                                     value={input?.expectedsalary}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter your ExpectedSalary")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             <div className='grid grid-cols-4 items-center gap-4'>
@@ -131,6 +140,9 @@ const Hrdetails = ({ open, setOpen }) => {
                                     value={input?.negotiable}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("please enter the Negotiable")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             <div className='grid grid-cols-4 items-center gap-4'>
@@ -141,16 +153,21 @@ const Hrdetails = ({ open, setOpen }) => {
                                     value={input?.hremail}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter the Hr email")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             <div className='grid grid-cols-4 items-center gap-4'>
-                                <Label htmlFor="hrusername" className="text-right">Negotiable</Label>
+                                <Label htmlFor="hrusername" className="text-right">hr name</Label>
                                 <Input
                                     id="hrusername"
                                     name="hrusername"
                                     value={input?.hrusername}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter the hr name")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             <div className='grid grid-cols-4 items-center gap-4'>
@@ -161,6 +178,8 @@ const Hrdetails = ({ open, setOpen }) => {
                                     value={input?.hrsatisfactory}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter the hr satisfactory ")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                         </div>

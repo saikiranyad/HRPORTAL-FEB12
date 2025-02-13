@@ -19,6 +19,7 @@ const CompanySetup = () => {
         description: "",
         website: "",
         location: "",
+        industry:"",
         file: null
     });
     const {singleCompany} = useSelector(store=>store.company);
@@ -41,6 +42,7 @@ const CompanySetup = () => {
         formData.append("description", input.description);
         formData.append("website", input.website);
         formData.append("location", input.location);
+        formData.append("industry", input.industry);
         if (input.file) {
             formData.append("file", input.file);
         }
@@ -70,6 +72,7 @@ const CompanySetup = () => {
             description: singleCompany.description || "",
             website: singleCompany.website || "",
             location: singleCompany.location || "",
+            industry: singleCompany.industry || "",
             file: singleCompany.file || null
         })
     },[singleCompany]);
@@ -120,6 +123,15 @@ const CompanySetup = () => {
                                 type="text"
                                 name="location"
                                 value={input.location}
+                                onChange={changeEventHandler}
+                            />
+                        </div>
+                        <div>
+                            <Label>Industry</Label>
+                            <Input
+                                type="text"
+                                name="industry"
+                                value={input.industry}
                                 onChange={changeEventHandler}
                             />
                         </div>

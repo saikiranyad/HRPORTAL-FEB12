@@ -28,7 +28,9 @@ const CompaniesTable = () => {
                     <TableRow>
                         <TableHead>Logo</TableHead>
                         <TableHead>Name</TableHead>
+                        <TableHead>industry</TableHead>
                         <TableHead>Date</TableHead>
+                        
                         <TableHead className="text-right">Action</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -42,6 +44,7 @@ const CompaniesTable = () => {
                                     </Avatar>
                                 </TableCell>
                                 <TableCell>{company.name}</TableCell>
+                                <TableCell>{company.industry}</TableCell>
                                 <TableCell>{company.createdAt.split("T")[0]}</TableCell>
                                 <TableCell className="text-right cursor-pointer">
                                     <Popover>

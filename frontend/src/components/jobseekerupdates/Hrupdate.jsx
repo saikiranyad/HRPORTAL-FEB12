@@ -93,6 +93,9 @@ const Hrupdate = ({ open, setOpen }) => {
                                         name="bio"
                                         value={input?.profile?.bio}
                                         onChange={changeEventHandler}
+                                        required
+                                        onInvalid={(e) => e.target.setCustomValidity("Enter your Bio")}
+                                        onInput={(e) => e.target.setCustomValidity("")}
                                     />
                                 </div>
 
@@ -104,6 +107,10 @@ const Hrupdate = ({ open, setOpen }) => {
                                         name="maritalstatus"
                                         value={input?.profile?.maritalstatus}
                                         onChange={changeEventHandler}
+
+                                        required
+                                        onInvalid={(e) => e.target.setCustomValidity("Enter your Marital status")}
+                                        onInput={(e) => e.target.setCustomValidity("")}
                                     >
                                         <option value="Single">Single</option>
                                         <option value="Married">Married</option>
@@ -126,6 +133,9 @@ const Hrupdate = ({ open, setOpen }) => {
                                         name="category"
                                         value={input?.profile?.category}
                                         onChange={changeEventHandler}
+                                        required
+                                        onInvalid={(e) => e.target.setCustomValidity("Enter your Category")}
+                                        onInput={(e) => e.target.setCustomValidity("")}
                                     >
                                         <option value="IT">IT</option>
                                         <option value="Marketing">Marketing</option>
@@ -144,6 +154,7 @@ const Hrupdate = ({ open, setOpen }) => {
                                         name="gst"
                                         value={input?.profile?.gst}
                                         onChange={changeEventHandler}
+
                                     />
                                 </div>
                                 <div className="flex flex-col gap-2 mb-4 w-80">
@@ -153,6 +164,9 @@ const Hrupdate = ({ open, setOpen }) => {
                                         name="pan"
                                         value={input?.profile?.pan}
                                         onChange={changeEventHandler} />
+                                        required
+                                        onInvalid={(e) => e.target.setCustomValidity("Enter your PAN")}
+                                        onInput={(e) => e.target.setCustomValidity("")}
                                 </div>
 
 

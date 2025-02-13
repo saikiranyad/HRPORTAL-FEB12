@@ -108,6 +108,9 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                                             value={input.fullname}
                                             onChange={changeEventHandler}
                                             className="col-span-3"
+                                            required
+                                            onInvalid={(e) => e.target.setCustomValidity("Enter your Name")}
+                                            onInput={(e) => e.target.setCustomValidity("")}
                                         />
                                     </div>
                                     <div className='grid grid-cols-4 items-center gap-4'>
@@ -119,6 +122,8 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                                             value={input.email}
                                             onChange={changeEventHandler}
                                             className="col-span-3"
+                                            onInvalid={(e) => e.target.setCustomValidity("Enter your Email")}
+                                            onInput={(e) => e.target.setCustomValidity("")}
                                         />
                                     </div>
                                     <div className='grid grid-cols-4 items-center gap-4'>
@@ -129,6 +134,9 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                                             value={input.phoneNumber}
                                             onChange={changeEventHandler}
                                             className="col-span-3"
+                                            onInvalid={(e) => e.target.setCustomValidity("Enter your Phone number")}
+                                            onInput={(e) => e.target.setCustomValidity("")}
+                                    
                                         />
                                     </div>
                                     <div className='grid grid-cols-4 items-center gap-4'>
@@ -139,6 +147,8 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                                             value={input.bio}
                                             onChange={changeEventHandler}
                                             className="col-span-3"
+                                            onInvalid={(e) => e.target.setCustomValidity("Enter your Bio")}
+                                            onInput={(e) => e.target.setCustomValidity("")}
                                         />
                                     </div>
                                     <div className='grid grid-cols-4 items-center gap-4'>
@@ -149,10 +159,12 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                                             value={input.skills}
                                             onChange={changeEventHandler}
                                             className="col-span-3"
+                                            onInvalid={(e) => e.target.setCustomValidity("Enter your Skills")}
+                                            onInput={(e) => e.target.setCustomValidity("")}
                                         />
                                     </div>
                                     {/* <Addressupdate/> */}
-                                     <div className='grid grid-cols-4 items-center gap-4'>
+                                     {/* <div className='grid grid-cols-4 items-center gap-4'>
                                         <Label htmlFor="skills" className="text-right">Skills</Label>
                                         <Input
                                             id="skills"
@@ -162,7 +174,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                                             className="col-span-3"
                                         />
                                     </div>
-                                    
+                                     */}
                                     <div className='grid grid-cols-4 items-center gap-4'>
                                         <Label htmlFor="file" className="text-right">Resume</Label>
                                         <Input
@@ -172,6 +184,8 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                                             accept=".pdf, .doc, .docx, .txt"
                                             onChange={fileChangeHandler}
                                             className="col-span-3"
+                                            onInvalid={(e) => e.target.setCustomValidity("Enter your Resume")}
+                                            onInput={(e) => e.target.setCustomValidity("")}
                                         />
                                     </div>
                                 </div>

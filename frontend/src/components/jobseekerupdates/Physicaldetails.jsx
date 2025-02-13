@@ -92,6 +92,9 @@ const Physicaldetails = ({ open, setOpen }) => {
                                     value={input.height}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter your Height")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
 
@@ -103,6 +106,9 @@ const Physicaldetails = ({ open, setOpen }) => {
                                     value={input.weight}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter your weight")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                             <div className='grid grid-cols-4 items-center gap-4'>
@@ -113,6 +119,9 @@ const Physicaldetails = ({ open, setOpen }) => {
                                     value={input.Bloodgroup}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter your Blood group")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                         </div>

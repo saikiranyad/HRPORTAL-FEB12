@@ -126,6 +126,8 @@ import Education from './components/ui/Education'
 import Adminjobedits from './components/admin/Adminjobedits'
 import Savedjobs from './components/Savedjobs'
 import Hrstats from './components/hrstats/Hrstats'
+import Naveducation from './components/Navigation_indus_education/Naveducation'
+import Navindustry from './components/Navigation_indus_education/navindustry'
 // import VerifyOtp from './components/auth/Verifyotp'
 
 
@@ -162,6 +164,24 @@ const appRouter = createBrowserRouter([
     path: "/profile",
     element: <Profile />
   },
+
+  {
+    path: "/educationlisting/:id",
+    element: <Education />
+  },
+  {
+    path: "/naveducationlisting/:id",
+    element: <Naveducation />
+  },
+  {
+    path: "/navindustrylisting/:id",
+    element: <Navindustry />
+  },
+  // {
+  //   path: "/industrylisting/:id",
+  //   element: <Displayindustrylis />
+  // },
+
   {
     path: "/hrstats",
     element: <Hrstats />
@@ -197,7 +217,7 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "/admin/jobedit/:id",
-    element: <ProtectedRoute><Adminjobedits/></ProtectedRoute>
+    element: <ProtectedRoute><Adminjobedits /></ProtectedRoute>
   },
   {
     path: "/admin/jobs/:id/applicants",

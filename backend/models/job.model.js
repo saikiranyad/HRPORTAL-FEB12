@@ -36,6 +36,10 @@ const jobSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    industry:{
+        type:String,
+        required:true
+    },
     company: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Company',

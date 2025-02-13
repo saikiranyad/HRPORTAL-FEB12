@@ -72,6 +72,7 @@ import { login, logout, register, updateProfile,submitAssessment, getAssessment,
      checkJobSavedStatus,
      approveHrUser,
      getHrUsers,
+     resetPassword,
      // verifyOtp,
      } from "../controllers/user.controller.js";
 import isAuthenticated from "../middlewares/isAuthenticated.js";
@@ -113,6 +114,7 @@ router.get("/saved", isAuthenticated, getSavedJobs);
 // router.route("/verifyOtp").post(verifyOtp);
 router.post("/approve-hr", approveHrUser);
 router.get("/gethrusers",getHrUsers)
+router.route("/reset-password").post(isAuthenticated,resetPassword)
 
 
 export default router;

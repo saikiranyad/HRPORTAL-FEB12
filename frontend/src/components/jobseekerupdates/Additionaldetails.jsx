@@ -100,6 +100,9 @@ const Additionaldetails = ({ open, setOpen }) => {
                                     value={input.languages}
                                     onChange={changeEventHandler}
                                     className="col-span-3"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Enter  Languages")}
+                                    onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
                         </div>

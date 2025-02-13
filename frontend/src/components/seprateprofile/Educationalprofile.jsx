@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import useGetAppliedJobs from '@/hooks/useGetAppliedJobs'
 
 import Educationalupdate from '../jobseekerupdates/Educationalupdate'
+import formatDate from '../jobseekerupdates/Date'
 
 
 const Educationalprofile = ({ open, setOpen }) => {
@@ -41,10 +42,14 @@ const Educationalprofile = ({ open, setOpen }) => {
                     <span>{item.fieldOfStudy}</span>
                     <br />
                     <label>Start Date: </label>
-                    <span>{item.startDate}</span>
+                    {/* <span>{item.startDate}</span> */}
+                    <span>{formatDate(item.startDate)}</span>
+
                     <br />
                     <label>End Date: </label>
-                    <span>{item.endDate}</span>
+                    {/* <span>{item.endDate}</span> */}
+                    <span>{formatDate(item.endDate)}</span>
+
                     <br />
                     <label>Grade: </label>
                     <span>{item.grade}</span>

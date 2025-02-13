@@ -11,6 +11,7 @@ import { setUser } from '@/redux/authSlice'
 import { toast } from 'sonner'
 import { IoStatsChartSharp } from "react-icons/io5";
 import { setSingleCompany } from '@/redux/companySlice'
+import Image from '../../../public/hr_jobs_logo.png';
 
 
 const Navbar = () => {
@@ -44,7 +45,8 @@ const Navbar = () => {
                 <div>
 
                     <Link to="/" className='flex items-center gap-2'>
-                        <h1 className='text-2xl font-bold text-[#9b9790]'>HR<span className='text-[#336659]'>|PORTAL</span></h1>
+                        {/* <h1 className='text-2xl font-bold text-[#9b9790]'>HR<span className='text-[#336659]'>|PORTAL</span></h1> */}
+                        <img src={Image} alt="Logo" width={200} height={70} />
 
                     </Link>
                 </div>

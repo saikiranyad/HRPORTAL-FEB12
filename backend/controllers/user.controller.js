@@ -635,6 +635,11 @@ export const register = async (req, res) => {
             return res.status(400).json({ message: "User already exists with this email.", success: false });
         }
 
+        const phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(phoneNumber)) {
+            return res.status(400).json({ message: "Phone number must be 10 digits .", success: false });
+        }
+
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // const otpCode = generateOtp();
@@ -886,6 +891,57 @@ export const logout = async (req, res) => {
     res.status(500).json({ message: "Server error", success: false });
   }
 };
+
+
+
+export const resetPassword = async (req, res) => {
+  try {
+    const { newPassword, confirmPassword } = req.body
+    const resetToken = req.cookies?.token;
+    console.log(req.body, resetToken)
+
+    // Validate input
+    if (!newPassword || !confirmPassword || !resetToken) {
+      return res.status(400).json({ message: "All fields are required", success: false })
+    }
+
+    if (newPassword !== confirmPassword) {
+      return res.status(400).json({ message: "Passwords do not match", success: false })
+    }
+
+    // Verify the reset token
+    let userId
+    try {
+      const decoded = jwt.verify(resetToken, process.env.SECRET_KEY)
+      userId = decoded.userId
+    } catch (error) {
+      return res.status(400).json({ message: "Invalid or expired reset token", success: false })
+    }
+
+    // Find the user
+    const user = await User.findById(userId)
+    console.log(user,126)
+    if (!user) {
+      return res.status(404).json({ message: "User not found", success: false })
+    }
+
+    // Hash the new password
+    const salt = await bcrypt.genSalt(10)
+    const hashedPassword = await bcrypt.hash(newPassword, salt)
+
+    // Update the user's password
+    user.password = hashedPassword
+    await user.save()
+    console.log(user,138)
+    return res.status(200).json({
+      message: "Password reset successfully",
+      success: true,
+    })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: "Server error", success: false })
+  }
+}
 
 
 
