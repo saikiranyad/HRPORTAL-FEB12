@@ -128,13 +128,13 @@
 
 //     const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, { expiresIn: "1d" });
 
-//     return res.status(200).cookie("token", token, {
-//       maxAge: 86400000,
-//       httpOnly: true,
-//       secure: true,
-//       sameSite: 'None',
-//       path: '/',
-//     }).json({
+    // return res.status(200).cookie("token", token, {
+    //   maxAge: 86400000,
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: 'None',
+    //   path: '/',
+    // }).json({
 //       message: `Welcome back ${user.fullname}`,
 //       user,
 //       token,
@@ -868,7 +868,13 @@ export const login = async (req, res) => {
 
     const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, { expiresIn: "1d" });
 
-    return res.status(200).cookie("token", token, { maxAge: 86400000, httpOnly: true, sameSite: "strict" }).json({
+   return res.status(200).cookie("token", token, {
+      maxAge: 86400000,
+      httpOnly: true,
+      secure: true,
+      sameSite: 'None',
+      path: '/',
+    }).json({
       message: `Welcome back ${user.fullname}`,
       user,
       token,
@@ -1271,7 +1277,13 @@ export const adminLogin = async (req, res) => {
     if (email === process.env.ADMINEMAIL && password === process.env.ADMINPASSWORD) {
       const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "24d" });
 
-      return res.status(200).cookie("token", token, { maxAge: 86400000, httpOnly: true, sameSite: "strict" }).json({
+       return res.status(200).cookie("token", token, {
+      maxAge: 86400000,
+      httpOnly: true,
+      secure: true,
+      sameSite: 'None',
+      path: '/',
+    }).json({
         message: "Welcome back Admin",
         token,
         success: true
