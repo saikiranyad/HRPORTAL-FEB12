@@ -1,8 +1,87 @@
-import React from 'react'
+
+import React, { Profiler, useState } from 'react'
+import Navbar from '../shared/Navbar'
+import { Avatar, AvatarImage } from '../ui/avatar'
+import { FaMale } from "react-icons/fa";
+import { FaFemale } from "react-icons/fa";
+
+import { Input } from '../ui/input'
+import { Button } from '../ui/button'
+import { Mail, Contact, Pen } from 'lucide-react'
+import { Badge } from '../ui/badge'
+import { Label } from '../ui/label'
+import UpdateProfileDialog from '../UpdateProfileDialog'
+import { useSelector } from 'react-redux'
+import useGetAppliedJobs from '@/hooks/useGetAppliedJobs';
+import { USER_API_END_POINT } from '@/utils/constant';
+
+
 
 function Resetpassword() {
+    useGetAppliedJobs();
+    const [open, setOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    
+    const [input, setInput] = useState({ 
+
+        newPassword: "",
+        confirmPassword: "",
+    });
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+
+    const changeEventHandler = (e) => {
+        setInput({ ...input, [e.target.name]: e.target.value });
+    };
+
+    const handleResetPassword = async () => {
+        setError('');
+        setSuccess('');
+
+
+        if (input.newPassword.length < 6) {
+            setError("New password must be at least 6 characters long.");
+            return;
+        }
+
+        if (input.newPassword !== input.confirmPassword) {
+            setError("New password and confirm password do not match.");
+            return;
+        }
+
+        try {
+            const response = await fetch(`${USER_API_END_POINT}/reset-password`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    
+                    newPassword: input.newPassword,
+                    confirmPassword: input.confirmPassword
+                }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setSuccess("Password updated successfully!");
+                setInput({ newPassword: '', confirmPassword: '' });
+            } else {
+                setError(data.message || 'Failed to update password. Please try again.');
+            }
+        } catch (error) {
+            console.log(error);
+            setError('An error occurred. Please try again.');
+        }
+    };
+
+    const { user } = useSelector(store => store.auth);
+
+
+
     return (
       
             <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-8">
