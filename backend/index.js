@@ -12,7 +12,7 @@ dotenv.config({});
 
 const app = express();
 const corsOptions = {
-    origin:['http://localhost:5173','http://localhost:5179'],
+    origin:['https://hrportal-feb12.onrender.com','https://hrportal-feb12-admin.onrender.com'],
     // origin:['https://hrp-fe-mdh1.onrender.com', 'https://hrp-ad.onrender.com'],
     credentials:true
 }
