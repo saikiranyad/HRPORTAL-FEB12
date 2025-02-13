@@ -20,7 +20,7 @@ const HrPage = () => {
     const [hrData, setHrData] = useState([]);
     const handlehrdata = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/v1/user/gethrusers', {
+            const response = await axios.get('https://hrportal-feb12-backend.onrender.com/api/v1/user/gethrusers', {
                 headers: {
                     "Content-Type": "application/json"
                 },

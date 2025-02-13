@@ -294,7 +294,7 @@ const OrdersTable = ({ payments }) => {
 			
 			const response = await axios.post(
 				// 'https://hrp-be-rx0e.onrender.com/api/v1/user/handlepayment',
-				'http://localhost:3000/api/v1/user/handlepayment',
+				'https://hrportal-feb12-backend.onrender.com/api/v1/user/handlepayment',
 				{ transactionId, status }, // Ensure status is "approve" or "reject"
 				{
 					headers: {

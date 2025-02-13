@@ -13,7 +13,7 @@ const Login = ({ setToken }) => {
         e.preventDefault();
         try {
             // const response = await axios.post("https://hrp-be-rx0e.onrender.com/api/v1/user/adminlogin", {
-             const response = await axios.post("http://localhost:3000/api/v1/user/adminlogin", {
+             const response = await axios.post("https://hrportal-feb12-backend.onrender.com/api/v1/user/adminlogin", {
                 email,
                 password,
             });

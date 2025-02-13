@@ -173,7 +173,7 @@ const OrdersPage = () => {
 	const handledata = async () => {
 		try {
 			// const response = await axios.get('https://hrp-be-rx0e.onrender.com/api/v1/user/getallPayments', {
-				const response = await axios.get('http://localhost:3000/api/v1/user/getallPayments', {
+				const response = await axios.get('https://hrportal-feb12-backend.onrender.com/api/v1/user/getallPayments', {
 				headers: {
 					"Content-Type": "application/json"
 				},

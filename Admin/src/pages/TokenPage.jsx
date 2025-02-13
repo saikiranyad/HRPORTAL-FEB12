@@ -54,7 +54,7 @@ const TokenPage = () => {
 
 	const handledata = async () => {
 		try {
-			const response = await axios.get('http://localhost:3000/api/v1/user/getallsubscriptions', {
+			const response = await axios.get('https://hrportal-feb12-backend.onrender.com/api/v1/user/getallsubscriptions', {
 				headers: {
 					"Content-Type": "application/json"
 				},

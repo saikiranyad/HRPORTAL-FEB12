@@ -36,7 +36,7 @@ const CompaniesTable = ({ companylist = [] }) => { // Default to empty array
     const handleCompanyApproval = async (companyId, status) => {
       try {
         const response = await axios.put(
-          `http://localhost:3000/api/v1/company/approve/${companyId}`,
+          `https://hrportal-feb12-backend.onrender.com/api/v1/company/approve/${companyId}`,
           { status },
           {
             headers: { "Content-Type": "application/json" },

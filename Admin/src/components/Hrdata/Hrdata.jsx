@@ -210,7 +210,7 @@ const Hrdata = ({ hrlist }) => {
   const handleHrApproval = async (hrId, status) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/v1/user/approve-hr`,
+        `https://hrportal-feb12-backend.onrender.com/api/v1/user/approve-hr`,
         { userId: hrId, action: status },
         {
           headers: { "Content-Type": "application/json" },

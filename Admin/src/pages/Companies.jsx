@@ -21,7 +21,7 @@ const Companies = () => {
     const [companyData, setCompanyData] = useState([]);
     const handlecompanydata = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/v1/company/getAllCompanies', {
+            const response = await axios.get('https://hrportal-feb12-backend.onrender.com/api/v1/company/getAllCompanies', {
                 headers: {
                     "Content-Type": "application/json"
                 },
