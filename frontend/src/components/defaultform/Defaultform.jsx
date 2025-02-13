@@ -14,6 +14,7 @@ import AppliedJobTable from '../AppliedJobTable'
 import UpdateProfileDialog from '../UpdateProfileDialog'
 import { useSelector } from 'react-redux'
 import useGetAppliedJobs from '@/hooks/useGetAppliedJobs'
+import Resetpassword from '../seprateprofile/Resetpassword';
 
 const isResume = true;
 
@@ -24,7 +25,7 @@ const Defaultform = () => {
     const { user } = useSelector(store => store.auth);
     return (
         <div>
-         
+
             <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-8">
 
 
@@ -40,18 +41,18 @@ const Defaultform = () => {
 
                                     <div>
                                         <Button onClick={() => setOpen(true)} className="text-right h-2 my-3 border-none" variant="outline">
-                                            <Pen height={'15px'}/>
+                                            <Pen height={'15px'} />
                                         </Button>
                                     </div>
                                 </div>
-                              
+
                             </div>
-                           
+
                         </div>
                         {/* personal details */}
                         <div >
                             <div className="my-5">
-                
+
                                 <div className="flex items-center gap-3 my-2">
                                     <Mail />
                                     <span>{user?.email}</span>
@@ -88,8 +89,13 @@ const Defaultform = () => {
                             )}
                         </div>
 
-                        
+
+
                         <UpdateProfileDialog open={open} setOpen={setOpen} />
+                        <div>
+                            <Resetpassword />
+                        </div>
+
                     </>
                 ) : user?.role === "Hr" ? (
                     <>
@@ -104,11 +110,11 @@ const Defaultform = () => {
 
                                         <div>
                                             <Button onClick={() => setOpen(true)} className="text-right h-2 my-3 border-none" variant="outline">
-                                                <Pen height={'15px'}/>
+                                                <Pen height={'15px'} />
                                             </Button></div>
                                     </div>
 
-                                    
+
                                 </div>
 
                             </div>
@@ -131,7 +137,9 @@ const Defaultform = () => {
                             </div>
                             <UpdateProfileDialog open={open} setOpen={setOpen} />
 
-
+                            <div>
+                                <Resetpassword />
+                            </div>
 
                         </div>
 
@@ -148,7 +156,7 @@ const Defaultform = () => {
 
                                             <div>
                                                 <Button onClick={() => setOpen(true)} className="text-right h-2 my-3 border-none" variant="outline">
-                                                    <Pen height={'15px'}/>
+                                                    <Pen height={'15px'} />
                                                 </Button></div>
                                         </div>
                                     </div>
@@ -168,7 +176,9 @@ const Defaultform = () => {
                                 </div>
                                 <UpdateProfileDialog open={open} setOpen={setOpen} />
 
-
+                                <div>
+                                    <Resetpassword />
+                                </div>
 
                             </div>
 
